@@ -1,0 +1,13 @@
+extend layout
+
+block content
+	form(name="form", action="/result", method="post")
+		input(type="text", name="query", placeholder="Nom ou prenom")
+		br
+		label Nom
+		input(type="radio", name="type", value="nom", checked)
+		br
+		label Prenom
+		input(type="radio", name="type", value="prenom")
+		br
+		input(type="submit", value="Chercher")

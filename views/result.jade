@@ -1,0 +1,16 @@
+extend layout
+
+block content
+	table
+		thead
+			th Nom
+			th Prenom
+			th Id du cours
+			th Intitule
+		tbody
+			each item in result
+				tr
+					td= item.nom
+					td= item.prenom 
+					td= item.cours_id
+					td= item.intitule

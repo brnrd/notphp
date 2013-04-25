@@ -14,3 +14,4 @@ What it's made of
 + [Express](http://expressjs.com)
 + [Jade](http://jade-lang.com/)
 + [node-mysql](https://github.com/felixge/node-mysql)
++ [Bootstrap](http://twitter.github.io/bootstrap)

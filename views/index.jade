@@ -1,13 +1,19 @@
 extend layout
 
 block content
-	form(name="form", action="/result", method="post")
-		input(type="text", name="query", placeholder="Nom ou prenom")
-		br
-		label Nom
-		input(type="radio", name="type", value="nom", checked)
-		br
-		label Prenom
-		input(type="radio", name="type", value="prenom")
-		br
-		input(type="submit", value="Chercher")
+	div.span12
+		form.well.form-horizontal(name="form", action="/result", method="post")
+			fieldset
+				div.control-group
+					div.input-append
+						input.input-xlarge(type="text", name="query", placeholder="Nom ou prenom")
+						input.btn(type="submit", value="Chercher")
+					br
+					label.radio
+					input.input-xlarge(type="radio", name="type", value="nom", checked)
+					span.help-inline Nom
+					br
+					label.radio
+					input(type="radio", name="type", value="prenom")
+					span.help-inline Prenom
+					

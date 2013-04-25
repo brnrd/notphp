@@ -13,8 +13,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', routes.root);
 app.get('/index', routes.index);
 app.post('/result', routes.result);
-app.get('/nom/:query', routes.nom);
-app.get('/prenom/:query', routes.prenom);
+app.get('/result', routes.index);
 app.get('*', routes.fourOfour);
 
 app.listen(8888)

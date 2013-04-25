@@ -19,31 +19,17 @@ exports.index = function (req, res) {
 exports.result = function (req, res) {
 	console.log(req.body.query)
 	console.log(req.body.type)
+	var query = req.body.query;
+	var sql_query;
 	if (req.body.type == 'nom') {
-		res.redirect('/nom/'+req.body.query)
+		sql_query = query_nom + mysql.escape(query);
 	} else {
-		res.redirect('/prenom/'+req.body.query)
+		sql_query = query_prenom + mysql.escape(query);
 	}
-};
-
-exports.nom = function (req, res) {
-	console.log('query = ' + req.params.query)
-	connection.connect();
-	connection.query(query_nom + mysql.escape(req.params.query), function (err, rows, fields) {
+	connection.query(sql_query, function (err, rows, fields) {
 		if(err){throw(err)}
 		res.render('result', {title : 'Result', result: rows})
 	});
-	connection.end();
-};
-
-exports.prenom = function (req, res) {
-	console.log('query = ' + req.params.query)
-	connection.connect();
-	connection.query(query_prenom + mysql.escape(req.params.query), function (err, rows, fields) {
-		if(err){throw(err)}
-		res.render('result', {title : 'Result', result: rows})
-	});
-	connection.end();
 };
 
 exports.fourOfour = function (req, res) {

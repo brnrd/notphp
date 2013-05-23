@@ -1,0 +1,22 @@
+extend layout
+
+block content
+	.span12
+		table#result-table.table.table-bordered.table-striped.table-hover
+			thead
+				th Nom
+				th Prenom
+				th Id du cours
+				th Intitule
+			tbody
+				each item in data
+					tr
+						td= item.nom
+						td= item.prenom 
+						td= item.cours_id
+						td= item.intitule
+
+block specific-js
+	script(src="/js/jquery/jquery-2.0.0.min.js")
+	script(src="/js/jquery/jquery.dataTables.min.js")
+	!= js('result')

@@ -1,0 +1,20 @@
+extend layout
+
+block content
+	.row
+		.span12
+			form.well.form-horizontal(name="form", action="/query", method="post")
+				fieldset
+					.control-group
+						.input-append
+							input.input-xlarge(type="text", name="query", placeholder="Nom ou prenom")
+							input.btn(type="submit", value="Chercher")
+						br
+						label.radio
+						input.input-xlarge(type="radio", name="type", value="nom", checked)
+						span.help-inline Nom
+						br
+						label.radio
+						input(type="radio", name="type", value="prenom")
+						span.help-inline Prenom
+						

@@ -1,0 +1,29 @@
+!!!5
+html
+	head
+		title #{title} | notPHP
+		meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+		link(rel="stylesheet", type="text/css", href="/css/bootstrap/bootstrap.min.css")
+	body
+		.navbar
+			.navbar-inner
+				.container
+					a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand(href="/") notPHP
+					.nav-collapse(id="main-menu")
+						ul.nav(id="main-menu-left")
+							li 
+								a(href="https://bitbucket.org/brnrd/notPHP", target="_blank") Code
+		.container
+			block content
+
+
+	footer.footer(style="text-align=")
+		.container
+			p Made with love by 
+				a(target="_blank", href="https://bitbucket.org/brnrd/") brnrd
+
+	block specific-js
